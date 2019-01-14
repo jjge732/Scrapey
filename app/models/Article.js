@@ -2,13 +2,25 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const ArticleSchema = new Schema({
-  title: {
+  headline: {
     type: String,
     required: true
   },
-  link: {
+  genre: {
     type: String,
     required: true
+  },
+  url: {
+    type: String,
+    required: true
+  },
+  imageUrl: {
+    type: String,
+    required: true
+  },
+  dateObtained: {
+    type: Date,
+    default: Date.now()
   },
   note: {
     type: Schema.Types.ObjectId,
