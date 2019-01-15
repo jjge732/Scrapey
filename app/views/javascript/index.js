@@ -1,11 +1,11 @@
 axios.get('/api/articles/').then(res => {
     function Card(props) {
         return(
-            <div class='card'>
-                <h2 class='headline'>{props.headline}</h2>
-                <h3 class='genre'>{props.genre}</h3>
-                <a href={props.url} class='image'><img src={props.imageUrl}/></a>
-                <button class='comment'>Comment on this Article!</button>
+            <div className='card'>
+                <h2 className='headline'>{props.headline}</h2>
+                <h3 className='genre'>{props.genre}</h3>
+                <a href={props.url} className='image'><img src={props.imageUrl}/></a>
+                <button className='comment'>Comment on this Article!</button>
             </div>
         );
     }
@@ -29,7 +29,6 @@ axios.get('/api/articles/').then(res => {
                     <Card headline = {res.data[9].headline} genre = {res.data[9].genre} url = {res.data[9].url} imageUrl = {res.data[9].imageUrl}/>
                     <Card headline = {res.data[10].headline} genre = {res.data[10].genre} url = {res.data[10].url} imageUrl = {res.data[10].imageUrl}/>
                     <Card headline = {res.data[11].headline} genre = {res.data[11].genre} url = {res.data[11].url} imageUrl = {res.data[11].imageUrl}/>
-
                 </div>
             );
         }

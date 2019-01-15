@@ -1,15 +1,41 @@
 #container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 400px);
-    grid-auto-rows: auto;
+    grid-template-columns: repeat(auto-fill, 360px);
+    grid-auto-rows: 330px;
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     margin: 5% auto;
     justify-content: center;
+    align-content: center;
 }
 
 .card {
     display: grid;
-    grid-template-rows: 25px, 25px, 50px;
-    grid-auto-columns: auto;
+    grid-template-rows: 75px, 25px, 205px 25px;
+    grid-template-columns: 360px;
+}
+
+h1, h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.headline  {
+    grid-row: 1;
+    height: 75px;
+}
+
+.genre {
+    grid-row: 2;
+    font-size: 18px;
+    height: 25px;
+}
+
+.image {
+    grid-row: 3;
+}
+
+.comment {
+    grid-row: 4;
+    height: 25px;
 }
