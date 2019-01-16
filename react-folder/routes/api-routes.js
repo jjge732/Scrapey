@@ -1,5 +1,7 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
+const path = require('path');
+
 module.exports = (app, db) => {
     axios.get('https://www.pride.com/').then(site => {
         const $ = cheerio.load(site.data);
@@ -44,4 +46,5 @@ module.exports = (app, db) => {
             }, {new: true}).then(added => res.json(added)).catch(err => res.send(err));
         }).catch(err => console.log(err));
     })
+    app.get('/manifest.json', (req, res) => res.sendFile(path.join(__dirname, '/../public/manifest.json')));
 }
