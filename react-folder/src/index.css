@@ -1,0 +1,128 @@
+body {
+    background-color: #ccc;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 400px);
+    grid-auto-rows: 250px;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    margin: 5% auto;
+    justify-content: center;
+    align-content: center;
+}
+
+#previousComments {
+    max-height: 100px;
+    overflow-y: scroll;
+}
+
+.oldComment {
+    background-color: #000;
+    line-height: 25px;
+    padding: 0 10px;
+}
+
+.modal {
+    display: flex;
+    z-index: 1;
+    position: fixed;
+    background-color: #444;
+    border-radius: 10px;
+    top: 40%;
+    left: -1vw;
+    height: 40vh;
+    width: 80vw;
+    margin: 0 10vw;
+    color: #F2B134;
+    flex-direction: column;
+}
+
+.modal form {
+    height: 140px;
+    display: flex;
+    margin: 5vw;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.card {
+    display: grid;
+    position: relative;
+    grid-template-rows: 205px 25px;
+    grid-template-columns: 360px;
+    grid-row-gap: 5px;
+    justify-content: center;
+}
+
+h1, .headline, h3 {
+    position: absolute;
+    font-size: 24px;
+    font-weight: bold;
+    color: #F2B134;
+    background-color: #000;
+    box-sizing: border-box;
+    width: 280px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.headline {
+    right: 20px;
+    bottom: 47px;
+}
+
+h3 {
+    top: 0;
+    left: 20px;
+    width: auto;
+    padding: 5px 2.5px;
+}
+
+#comments {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+img {
+    border-radius: 10px;
+}
+
+.headline, .genre, .image  {
+    grid-row: 1;
+}
+
+.genre {
+    font-size: 18px;
+}
+
+.comment {
+    grid-row: 2;
+    height: 25px;
+    width: 180px;
+    justify-self: center;
+}
+
+/* https://medium.freecodecamp.org/a-quick-guide-to-styling-buttons-using-css-f64d4f96337f */
+button {
+    background-image: -webkit-linear-gradient(top, #FC3C3C, #393E46);
+    background-image: -moz-linear-gradient(top, #FC3C3C, #393E46);
+    background-image: -ms-linear-gradient(top, #FC3C3C, #393E46);
+    background-image: -o-linear-gradient(top, #FC3C3C, #393E46);
+    background-image: linear-gradient(to bottom, #FC3C3C, #393E46);
+
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-color: #393E46;
+    border-radius: 28px;
+    /* text-shadow: 3px 2px 1px #9daef5; */
+    -webkit-box-shadow: 6px 5px 24px #4B6792;
+    -moz-box-shadow: 6px 5px 24px #4B6792;
+    box-shadow: 6px 5px 24px #4B6792;
+    color: #fff;
+    cursor: pointer;
+}
