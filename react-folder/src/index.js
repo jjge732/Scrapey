@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './reset.css';
 import './index.css';
 import axios from 'axios';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 axios.get('/api/articles/').then(res => {
     class Modal extends Component {
@@ -101,6 +102,29 @@ axios.get('/api/articles/').then(res => {
              );
         }
     }
-    ReactDOM.render(<Container />, document.getElementById('root'));
+    class App extends Component {
+        constructor(props) {
+          super(props);
+          this.state = {}
+          this.connecToServer = this.connecToServer.bind(this);
+        }
+        connecToServer() {
+          fetch('/');
+        }
+      
+        componentDidMount() {
+          this.connecToServer();
+        }
+        render() {
+          return (
+            <Router>
+               {/* <Navbar /> */}
+               <Route exact path="/" component={Container} />
+               {/* <Footer /> */}
+            </Router>
+          );
+        }
+      }
+    ReactDOM.render(<App />, document.getElementById('root'));
 }).catch(err => console.log(err));
 
