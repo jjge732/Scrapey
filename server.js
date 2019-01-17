@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/react-folder/public')));
 if(process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'react-folder/build')));
+  app.use(express.static(path.join(__dirname, '/react-folder/build')));
 }
 
 require('./routes/html-routes.js')(app, db);
